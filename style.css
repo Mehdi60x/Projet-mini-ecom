@@ -356,7 +356,7 @@ body {
     border: solid white;
  }
 
- /* section sm-banner */
+ /* section sm-banner collection Homme/Femme */
 
  #sm-banner {
     display: flex;
@@ -493,3 +493,131 @@ body {
 }
 
 /* section Newsletter */
+#newsletter {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: black;
+    background-repeat: no-repeat;
+    background-position: 20% 30%;
+}
+
+#newsletter h4{
+    font-size: 22px;
+    font-weight: 800;
+    color: white;
+}
+
+#newsletter p {
+    font-size: 15px;
+    font-weight: 800;
+    color: grey;
+}
+
+#newsletter .form {
+    display: flex;
+    width: 40%;
+}
+
+#newsletter input {
+    height: 3.115rem;
+    padding: 0 1.25em;
+    font-size: 14px;
+    width: 100%;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    outline: none;
+   
+}
+
+#newsletter button{
+    background-color: white;
+    color: black;
+    white-space: nowrap;
+    margin-left: 10px;
+    height: 3.115rem;
+    padding: 0 1.25em;
+}
+
+#newsletter button:hover {
+    background-color: transparent;
+    transition: 0.5s ease;
+    color: white;
+    border: 2px solid white;
+}
+
+/* Footer */
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+footer .col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+footer .logo {
+    margin-top: 10px;
+    width: 330px;
+    margin-left: -40px;
+
+}
+
+footer h4 {
+    font-size: 16px;
+    padding-bottom: 20px;
+}
+
+footer p {
+    font-size: 14px;
+    margin: 0 0 8px 0;
+    color: gray;
+    font-weight: 800;
+}
+
+footer a {
+    font-size: 13px;
+    text-decoration: none;
+    color: black;
+    margin-bottom: 10px;
+    color: gray;
+    font-weight: 800;
+}
+
+footer .follow {
+    margin-top: 20px;
+}
+
+footer .follow i {
+    color: gray;
+    padding-right: 4px;
+    cursor: pointer;
+}
+
+footer .install img {
+    margin: 10px 0 15px 0;
+}
+
+footer .colinstall img {
+    width: 250px;
+}
+
+footer .follow i:hover,
+footer a:hover {
+    color: black;
+}
+
+footer .copyright {
+    width: 100%;
+    text-align: center;
+    font-weight: 800;
+}
+
+footer .copyright p {
+    color: black;
+}
