@@ -918,12 +918,16 @@ footer .copyright p {
     #banner {
         height: 40vh;
     }
+    #sm-banner .banner-box {
+        height: 40vh;
+    }
+    #sm-banner .banner-box2 {
+        height: 40vh;
+    }
     .logo { 
         width: 100%;
-         max-width: 350px;
-         justify-content: center;
-         align-items: center;
     }
+    
 }
 
 
