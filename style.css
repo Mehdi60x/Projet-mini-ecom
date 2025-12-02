@@ -920,6 +920,7 @@ footer .copyright p {
     }
     #sm-banner .banner-box {
         height: 40vh;
+        width: 100%;
     }
     #sm-banner .banner-box2 {
         height: 40vh;
