@@ -139,7 +139,7 @@ button.normal {
 
 /* Navbar mobile (icône) */
 #mobile {
-    /* display: none; */
+    display: none;
     align-items: center;
     gap: 20px;
 }
@@ -701,20 +701,19 @@ footer .copyright p {
 @media (max-width: 768px) {
 
     /* NAV MOBILE */
-    #navbar {
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-        position: fixed;
-        top: 0;
-        right: -300px;
-        height: 100vh;
-        width: 250px;
-        background-color: white;
-        box-shadow: 0 40px 60px rgba(0, 0, 0, 0.2);
-        padding: 80px 0 0 10px;
-        transition: 0.4s ease;
-    }
+ #header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 80px;
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
 
     #navbar.active {
         right: 0;
@@ -908,6 +907,18 @@ footer .copyright p {
         padding: 80px 0 0 10px;
         transition: 0.4s ease;
     }
+     #header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 40px;
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
     .section-p1 {
         padding: 20px;
     }
