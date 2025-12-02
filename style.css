@@ -847,6 +847,7 @@ footer .copyright p {
 
 /* PETITS TÉLÉPHONES (≤ 480px) */
 @media (max-width: 480px) {
+    .logo { width: 100%;}
 
     h1 { font-size: 32px; }
     h2 { font-size: 26px; }
