@@ -867,12 +867,12 @@ footer .copyright p {
         margin: 10px 0;
     }
     #sm-banner img {
-         height: 700px;
+         height: 50vh;
         width: 100%;
     }
     #sm-banner .banner-box1,
     #sm-banner .banner-box2 {
-        height: 800px;
+        height: 50vh;
         width: 100%;
         padding: 20px;
     }
