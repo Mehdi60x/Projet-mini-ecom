@@ -844,7 +844,7 @@ footer .copyright p {
         text-align: left;
     }
 }
-
+/* RESPONSIVE DESIGN__________________________________________________________________________ */
 /* PETITS TÉLÉPHONES (≤ 480px) */
 @media (max-width: 480px) {
         #navbar {
@@ -863,7 +863,6 @@ footer .copyright p {
     }
     .logo { 
         width: 70%;
-
     }
 
     h1 { font-size: 32px; }
@@ -908,6 +907,20 @@ footer .copyright p {
 }
 
 @media (max-width:460px){
+       #navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0;
+        right: -300px;
+        height: 100vh;
+        width: 250px;
+        background-color: white;
+        box-shadow: 0 40px 60px rgba(0, 0, 0, 0.2);
+        padding: 80px 0 0 10px;
+        transition: 0.4s ease;
+    }
     .section-p1 {
         padding: 20px;
     }
