@@ -139,7 +139,7 @@ button.normal {
 
 /* Navbar mobile (icône) */
 #mobile {
-    display: none;
+    /* display: none; */
     align-items: center;
     gap: 20px;
 }
