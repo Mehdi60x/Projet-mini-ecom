@@ -1,17 +1,24 @@
-/* -----------------------------
-   STYLE GLOBAL 
-------------------------------*/
-@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/* ==============================
+   STYLE GLOBAL
+==============================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@300;400;500;600;700;800;900&display=swap');
 
 * {
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
     width: 100%;
+    font-family: "Spartan", Arial, Helvetica, sans-serif;
+    color: black;
+    background-color: #ffffff;
 }
 
 h1 {
@@ -23,6 +30,7 @@ h1 {
 h2 {
     font-size: 40px;
     line-height: 54px;
+    color: black;
 }
 
 h4 {
@@ -62,9 +70,10 @@ button.normal {
     transition: 0.4s ease;
 }
 
-/* -----------------------------
+/* ==============================
    BANDEAU WELCOME
-------------------------------*/
+==============================*/
+
 #welcome {
     display: flex;
     flex-direction: column;
@@ -81,30 +90,44 @@ button.normal {
     font-size: 14px;
 }
 
-/* -----------------------------
-   HEADER / NAVBAR
-------------------------------*/
+/* ==============================
+   HEADER / NAVBAR + LOGO
+==============================*/
+
+/* Logo générique (toutes zones) */
 .logo {
-    max-width: 330px;
+    display: block;
+    width: 100%;
+    max-width: 260px;
+    height: auto;
 }
 
+/* Header principal */
 #header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 5px 80px;
+    padding: 8px 80px;
     background-color: white;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
     z-index: 999;
     position: sticky;
     top: 0;
     left: 0;
 }
 
+/* Logo dans le header */
+#header .logo {
+    max-width: 220px;
+}
+
+/* Navbar desktop */
 #navbar {
     display: flex;
     align-items: center;
     justify-content: center;
+    list-style: none;
+    transition: 0.4s ease;
 }
 
 #navbar li {
@@ -137,20 +160,31 @@ button.normal {
     left: 20px;
 }
 
-/* Navbar mobile (icône) */
+/* Icônes mobile (burger + panier) */
 #mobile {
     display: none;
     align-items: center;
     gap: 20px;
 }
 
-#close {
-    display: none;
+#mobile a {
+    color: black;
 }
 
-/* -----------------------------
-   HERO
-------------------------------*/
+#bar {
+    font-size: 25px;
+    cursor: pointer;
+}
+
+#close {
+    display: none;
+    color: black;
+}
+
+/* ==============================
+   HERO HOME
+==============================*/
+
 #hero {
     background-image: url("Asset/image/Hbaccueilpage.png");
     height: 90vh;
@@ -180,6 +214,7 @@ button.normal {
 #hero p {
     color: white;
     font-weight: bolder;
+    max-width: 420px;
 }
 
 #hero button {
@@ -188,20 +223,20 @@ button.normal {
     padding: 10px 15px;
     border-radius: 12px;
     font-weight: bold;
-    border: black;
-    background-repeat: no-repeat;
+    border: 1px solid black;
     cursor: pointer;
+    transition: 0.8s ease;
 }
 
 #hero button:hover {
     background-color: black;
     color: white;
-    transition: 0.8s ease;
 }
 
-/* -----------------------------
+/* ==============================
    FEATURE (icônes services)
-------------------------------*/
+==============================*/
+
 #feature {
     display: flex;
     align-items: center;
@@ -218,18 +253,20 @@ button.normal {
     text-align: center;
     padding: 25px 15px;
     box-shadow: 20px 20px 34px rgba(0, 0, 0, 0.08);
-    border: 1px solid;
+    border: 1px solid #eee;
     border-radius: 5px;
     margin: 15px 0;
+    background-color: white;
+    transition: 0.5s ease;
 }
 
 #feature .fe-box:hover {
     box-shadow: 10px 10px 54px rgba(23, 23, 24, 0.7);
-    transition: 0.5s ease;
 }
 
-#feature .fe.box img {
+#feature .fe-box img {
     width: 100%;
+    max-width: 100px;
     margin-bottom: 20px;
 }
 
@@ -242,9 +279,11 @@ button.normal {
     background-color: black;
 }
 
-/* -----------------------------
-   PRODUITS (collection Hiver & Polaris)
-------------------------------*/
+/* ==============================
+   PRODUITS (collection)
+   (attention : 2 sections avec id="produit1" dans le HTML)
+==============================*/
+
 #produit1 {
     text-align: center;
 }
@@ -258,6 +297,7 @@ button.normal {
     justify-content: space-between;
     padding-top: 20px;
     flex-wrap: wrap;
+    gap: 20px;
 }
 
 #produit1 .pro {
@@ -270,6 +310,7 @@ button.normal {
     box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.03);
     margin: 15px 0;
     transition: 0.3s ease;
+    background-color: white;
 }
 
 #produit1 .pro:hover {
@@ -325,17 +366,18 @@ button.normal {
     cursor: pointer;
     text-decoration: none;
     font-weight: 800;
+    transition: 0.6s ease;
 }
 
 #produit1 .pro a:hover {
     background-color: white;
     color: black;
-    transition: 0.6s ease;
 }
 
-/* -----------------------------
+/* ==============================
    BANNIÈRE SOLDES
-------------------------------*/
+==============================*/
+
 #banner {
     display: flex;
     flex-direction: column;
@@ -363,7 +405,7 @@ button.normal {
 #banner h2 span {
     margin-bottom: 10px;
     border: solid 2px white;
-    padding: 5px 2px;
+    padding: 5px 8px;
 }
 
 #banner button:hover {
@@ -374,10 +416,10 @@ button.normal {
     border: solid white;
 }
 
-/* -----------------------------
-   SM-BANNER (Collection Hommes / Femmes)
-   -> VERSION AMÉLIORÉE
-------------------------------*/
+/* ==============================
+   SM-BANNER (Collection H / F)
+==============================*/
+
 #sm-banner {
     display: flex;
     flex-wrap: wrap;
@@ -448,15 +490,25 @@ button.normal {
     border-color: white;
 }
 
-/* -----------------------------
-   BLOG
-------------------------------*/
+/* ==============================
+   BLOG – SECTION HOME
+==============================*/
+
 #blog {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 0 80px;
     margin-top: 30px;
+}
+
+#blog h2 {
+    width: 100%;
+    color: black;
+    font-size: 35px;
+    margin: 0 auto 40px auto;
+    text-align: center;
+    padding-bottom: 20px;
 }
 
 #blog .banner-box,
@@ -500,21 +552,12 @@ button.normal {
 #blog a:hover {
     background-color: black;
     color: white;
-    transition: 0.4s ease;
-    border: solid 2px white;
 }
 
-#blog h2 {
-    color: black;
-    font-size: 35px;
-    margin-bottom: 40px;
-    margin: 0 auto;
-    padding-bottom: 40px;
-}
-
-/* -----------------------------
+/* ==============================
    NEWSLETTER
-------------------------------*/
+==============================*/
+
 #newsletter {
     display: flex;
     justify-content: space-between;
@@ -523,6 +566,10 @@ button.normal {
     background-color: black;
     background-repeat: no-repeat;
     background-position: 20% 30%;
+}
+
+#newsletter .newstext {
+    max-width: 500px;
 }
 
 #newsletter h4 {
@@ -535,6 +582,7 @@ button.normal {
     font-size: 15px;
     font-weight: 800;
     color: grey;
+    margin: 10px 0 0 0;
 }
 
 #newsletter .form {
@@ -559,18 +607,21 @@ button.normal {
     margin-left: 10px;
     height: 3.115rem;
     padding: 0 1.25em;
+    border-radius: 5px;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: 0.5s ease;
 }
 
 #newsletter button:hover {
     background-color: transparent;
-    transition: 0.5s ease;
     color: white;
-    border: 2px solid white;
 }
 
-/* -----------------------------
+/* ==============================
    FOOTER
-------------------------------*/
+==============================*/
+
 footer {
     display: flex;
     flex-wrap: wrap;
@@ -584,10 +635,10 @@ footer .col {
     margin-bottom: 20px;
 }
 
-footer .logo {
-    margin-top: 10px;
-    width: 330px;
-    margin-left: -40px;
+/* Logo dans le footer (dans la communauté) */
+footer .icon .logo {
+    max-width: 200px;
+    margin-top: 15px;
 }
 
 footer h4 {
@@ -637,6 +688,7 @@ footer .copyright {
     width: 100%;
     text-align: center;
     font-weight: 800;
+    margin-top: 20px;
 }
 
 footer .copyright p {
@@ -644,328 +696,9 @@ footer .copyright p {
 }
 
 /* ==============================
-   RESPONSIVE DESIGN INDEX.HTML
+   BLOG.HTML – HERO + GRID
 ==============================*/
 
-/* TABLETTES (≤ 1024px) */
-@media (max-width: 1024px) {
-
-    #header {
-        padding: 10px 40px;
-    }
-
-    #hero {
-        height: 70vh;
-        padding: 0 40px;
-        background-position: center;
-    }
-
-    #produit1 .pro {
-        width: 45%;
-    }
-
-    #banner {
-        height: 30vh;
-    }
-
-    #blog {
-        padding: 0 40px;
-    }
-
-    #blog .banner-box,
-    #blog .banner-box2,
-    #blog .banner-box3 {
-        min-width: 100%;
-        height: 35vh;
-        margin-bottom: 20px;
-    }
-
-    #newsletter .form {
-        width: 100%;
-        margin-top: 20px;
-    }
-
-    /* sm-banner ajusté */
-    #sm-banner .banner-box1,
-    #sm-banner .banner-box2 {
-        height: 340px;
-        padding: 24px;
-    }
-
-    #sm-banner h2 {
-        font-size: 24px;
-    }
-}
-
-/* SMARTPHONES (≤ 768px) */
-@media (max-width: 768px) {
-
-    /* NAV MOBILE */
- #header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 5px 80px;
-    background-color: white;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    z-index: 999;
-    position: sticky;
-    top: 0;
-    left: 0;
-}
-
-
-    #navbar.active {
-        right: 0;
-    }
-
-    #navbar li {
-        margin-bottom: 20px;
-    }
-
-    #mobile {
-        display: flex;
-    }
-
-    #close {
-        display: initial;
-        position: absolute;
-        top: 30px;
-        left: 20px;
-        font-size: 25px;
-        cursor: pointer;
-    }
-
-    #bar {
-        font-size: 25px;
-        cursor: pointer;
-    }
-
-    /* HERO */
-    #hero {
-        height: 60vh;
-        padding: 0 20px;
-        background-position: center;
-    }
-
-    /* FEATURE */
-    #feature {
-        justify-content: center;
-        gap: 20px;
-    }
-
-    #feature .fe-box {
-        width: 140px;
-    }
-
-    /* PRODUITS */
-    #produit1 .pro-container {
-        justify-content: center;
-    }
-
-    #produit1 .pro {
-        width: 90%;
-    }
-
-    /* BANNIÈRE SOLDES */
-    #banner {
-        height: 30vh;
-        padding: 20px;
-    }
-
-    /* SM-BANNER */
-    #sm-banner {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    #sm-banner .banner-box1,
-    #sm-banner .banner-box2 {
-        flex: 1 1 100%;
-        width: 100%;
-        height: 700px; /* option B */
-        padding: 20px;
-    }
-
-    #sm-banner h2 {
-        font-size: 20px;
-    }
-
-    #sm-banner a {
-        font-size: 14px;
-        padding: 8px 14px;
-    }
-
-    /* BLOG */
-    #blog {
-        padding: 0 20px;
-    }
-
-    #blog .banner-box,
-    #blog .banner-box2,
-    #blog .banner-box3 {
-        min-width: 100%;
-        height: 250px;
-        margin-bottom: 20px;
-    }
-
-    #blog h2 {
-        font-size: 25px;
-        text-align: center;
-    }
-
-    /* NEWSLETTER */
-    #newsletter {
-        padding: 40px 20px;
-        text-align: center;
-    }
-
-    #newsletter .form {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    #newsletter button {
-        margin-left: 0;
-        margin-top: 10px;
-        width: 100%;
-    }
-
-    /* FOOTER */
-    footer {
-        flex-direction: column;
-        padding: 20px;
-    }
-
-    footer .col,
-    footer .colinstall {
-        width: 100%;
-        text-align: left;
-    }
-}
-/* RESPONSIVE DESIGN__________________________________________________________________________ */
-/* PETITS TÉLÉPHONES (≤ 480px) */
-@media (max-width: 480px) {
-      
-    .logo { 
-        width: 70%;
-    }
-
-    h1 { font-size: 32px; }
-    h2 { font-size: 26px; }
-    h4 { font-size: 16px; }
-
-    #hero {
-        height: 50vh;
-        padding: 0 15px;
-        text-align: left;
-    }
-
-    #produit1 .pro {
-        width: 100%;
-        margin: 10px 0;
-    }
-    #sm-banner img {
-         height: 50vh;
-        width: 100%;
-    }
-    #sm-banner .banner-box1,
-    #sm-banner .banner-box2 {
-        height: 50vh;
-        width: 100%;
-        padding: 20px;
-    }
-
-
-    #blog .banner-box,
-    #blog .banner-box2,
-    #blog .banner-box3 {
-        height: 220px;
-    }
-
-    #newsletter .form input {
-        height: 2.8rem;
-    }
-
-    #newsletter button {
-        height: 2.8rem;
-    }
-}
-
-@media (max-width:460px){
-       #navbar {
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-        position: fixed;
-        top: 0;
-        right: -300px;
-        height: 100vh;
-        width: 250px;
-        background-color: white;
-        box-shadow: 0 40px 60px rgba(0, 0, 0, 0.2);
-        padding: 80px 0 0 10px;
-        transition: 0.4s ease;
-    }
-     #header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 40px;
-    background-color: white;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    z-index: 999;
-    position: sticky;
-    top: 0;
-    left: 0;
-}
-    .section-p1 {
-        padding: 20px;
-    }
-    #header {
-        padding: 10px 30px;
-    }
-    h1 {
-        font-size: 38px;
-    }
-    h2 { font-size: 32px;
-    }
-    #hero {
-        padding: 0 20px;
-        background-position: 55%;
-    }
-    #feature { 
-        justify-content: space-between;
-    }
-    #feature .fe-box{
-        width: 155px;
-        margin: 0 0 15px 0;
-    }
-    #produit1 .pro {
-        width: 100%;
-    }
-    #banner {
-        height: 40vh;
-    }
-    #sm-banner .banner-box {
-        height: 40vh;
-        width: 100%;
-    }
-    #sm-banner .banner-box2 {
-        height: 40vh;
-    }
-    .logo { 
-        width: 100%;
-    }
-    
-}
-
-
-/* ===========================================
-   CSS PAGE BLOG.HTML – STYLE PREMIUM HORIZONS BLANC
-   =========================================== */
-
-/* HERO DU BLOG */
 #blog-hero {
     height: 85vh;
     background-size: cover;
@@ -1001,7 +734,7 @@ footer .copyright p {
     font-weight: 600;
 }
 
-/* TITRE SECTIONS */
+/* TITRE SECTIONS BLOG */
 .blog-title {
     text-align: center;
     margin-bottom: 40px;
@@ -1063,51 +796,45 @@ footer .copyright p {
 
 /* SECTION HISTOIRE */
 #blog-story {
-
-    display: flex;
-    flex-wrap: wrap;
-    gap: 24px;
-    align-items: stretch;
-}
-
-#blog-story .banner-box1,
-#blog-story .banner-box2 {
+    width: 100%;
     flex: 1 1 400px;
-    height: 420px;
+    height: 600px;
     border-radius: 12px;
     padding: 30px;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-start;
     background-size: cover;
     background-position: center;
     position: relative;
     overflow: hidden;
-}
-
-/* images de fond */
-#blog-story .banner-box1 {
+    gap: 24px;
+    align-items: stretch;
     background-image: url(Asset/image/BlogCanBlue.png);
 }
 
-/* #blog-story .banner-box2 {
-    background-image: url(Asset/image/AuxPortesDuGrandFroid.png);
-} */
-
-/* voile sombre pour lisibilité du texte */
-#blog-story .banner-box1::before,
-#blog-story .banner-box2::before {
+/* voile sombre */
+#blog-story::before {
     content: "";
     position: absolute;
     inset: 0;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.05));
 }
 
+#blog-story .story-container {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    color: white;
+}
 
+#blog-story h3 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
 
-
-
+#blog-story p {
+    color: #f2f2f2;
+    margin-bottom: 15px;
+}
 
 #blog-story .story-container a {
     background-color: #000000;
@@ -1119,40 +846,232 @@ footer .copyright p {
     text-decoration: none;
 }
 
-#blog-story {
-    width: 100%;
-    border-radius: 12px;
-    flex: 1 1 400px;
-    height: 600px;
-    border-radius: 12px;
-    padding: 30px;
-    display: flex;
-    /* flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start; */
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    overflow: hidden;
-    
-
+#blog-story .story-container a:hover {
+    background-color: white;
+    color: black;
 }
 
-#blog-story h3 {
-    font-size: 28px;
-    margin-bottom: 15px;
+.imgAbout { 
+    flex: 1 1 350px;
 }
 
-#blog-story p {
-    color: #555;
-    margin-bottom: 15px;
+/* ==============================
+   RESPONSIVE DESIGN
+==============================*/
+
+/* TABLETTES (≤ 1024px) */
+@media (max-width: 1024px) {
+
+    .section-p1 {
+        padding: 40px;
+    }
+
+    #header {
+        padding: 8px 40px;
+    }
+
+    #hero {
+        height: 70vh;
+        padding: 0 40px;
+        background-position: center;
+    }
+
+    #produit1 .pro {
+        width: 45%;
+    }
+
+    #banner {
+        height: 30vh;
+    }
+
+    #blog {
+        padding: 0 40px;
+    }
+
+    #blog .banner-box,
+    #blog .banner-box2,
+    #blog .banner-box3 {
+        min-width: 100%;
+        height: 35vh;
+        margin-bottom: 20px;
+    }
+
+    #newsletter .form {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    #sm-banner .banner-box1,
+    #sm-banner .banner-box2 {
+        height: 340px;
+        padding: 24px;
+    }
+
+    #sm-banner h2 {
+        font-size: 24px;
+    }
+
+    #blog-hero {
+        padding: 0 40px;
+    }
 }
 
-/* ===========================================
-   RESPONSIVE BLOG.HTML
-   =========================================== */
+/* SMARTPHONES (≤ 768px) */
 @media (max-width: 768px) {
 
+    .section-p1 {
+        padding: 30px 20px;
+    }
+
+    /* NAV MOBILE */
+    #header {
+        padding: 8px 20px;
+    }
+
+    #header .logo {
+        max-width: 190px;      /* logo bien visible sur mobile */
+    }
+
+    /* Navbar devient panneau latéral */
+    #navbar {
+        position: fixed;
+        top: 0;
+        right: -260px;
+        height: 100vh;
+        width: 260px;
+        background-color: white;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 80px 20px 20px 20px;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        z-index: 998;
+    }
+
+    #navbar.active {
+        right: 0;
+    }
+
+    #navbar li {
+        margin-bottom: 20px;
+        padding: 0;
+    }
+
+    #mobile {
+        display: flex;
+    }
+
+    #close {
+        display: initial;
+        position: absolute;
+        top: 30px;
+        left: 20px;
+        font-size: 25px;
+        cursor: pointer;
+    }
+
+    /* HERO */
+    #hero {
+        height: 60vh;
+        padding: 0 20px;
+        background-position: center;
+    }
+
+    /* FEATURE */
+    #feature {
+        justify-content: center;
+        gap: 20px;
+    }
+
+    #feature .fe-box {
+        width: 140px;
+    }
+
+    /* PRODUITS */
+    #produit1 .pro-container {
+        justify-content: center;
+    }
+
+    #produit1 .pro {
+        width: 90%;
+    }
+
+    /* BANNIÈRE SOLDES */
+    #banner {
+        height: 30vh;
+        padding: 20px;
+    }
+
+    /* SM-BANNER */
+    #sm-banner {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    #sm-banner .banner-box1,
+    #sm-banner .banner-box2 {
+        flex: 1 1 100%;
+        width: 100%;
+        height: 700px;
+        padding: 20px;
+    }
+
+    #sm-banner h2 {
+        font-size: 20px;
+    }
+
+    #sm-banner a {
+        font-size: 14px;
+        padding: 8px 14px;
+    }
+
+    /* BLOG HOME */
+    #blog {
+        padding: 0 20px;
+    }
+
+    #blog .banner-box,
+    #blog .banner-box2,
+    #blog .banner-box3 {
+        min-width: 100%;
+        height: 250px;
+        margin-bottom: 20px;
+    }
+
+    #blog h2 {
+        font-size: 25px;
+        text-align: center;
+    }
+
+    /* NEWSLETTER */
+    #newsletter {
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    #newsletter .form {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #newsletter button {
+        margin-left: 0;
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    /* FOOTER */
+    footer {
+        flex-direction: column;
+        padding: 30px 20px;
+    }
+
+    footer .col,
+    footer .colinstall {
+        width: 100%;
+        text-align: left;
+    }
+
+    /* BLOG HERO + STORY */
     #blog-hero {
         height: 60vh;
         padding: 0 30px;
@@ -1166,12 +1085,66 @@ footer .copyright p {
         font-size: 22px;
     }
 
+    #blog-story {
+        height: auto;
+        padding: 30px 20px;
+    }
+
     #blog-story .story-container {
-        flex-direction: column;
+        max-width: 100%;
     }
 }
 
+/* PETITS TÉLÉPHONES (≤ 480px) */
 @media (max-width: 480px) {
+
+    .section-p1 {
+        padding: 20px;
+    }
+
+    #header {
+        padding: 8px 16px;
+    }
+
+    #header .logo {
+        max-width: 170px;      /* toujours lisible */
+    }
+
+    h1 { font-size: 32px; }
+    h2 { font-size: 26px; }
+    h4 { font-size: 16px; }
+
+    #hero {
+        height: 50vh;
+        padding: 0 15px;
+        text-align: left;
+    }
+
+    #produit1 .pro {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    #sm-banner .banner-box1,
+    #sm-banner .banner-box2 {
+        height: 50vh;
+        width: 100%;
+        padding: 20px;
+    }
+
+    #blog .banner-box,
+    #blog .banner-box2,
+    #blog .banner-box3 {
+        height: 220px;
+    }
+
+    #newsletter .form input {
+        height: 2.8rem;
+    }
+
+    #newsletter button {
+        height: 2.8rem;
+    }
 
     #blog-hero {
         height: 55vh;
@@ -1187,7 +1160,45 @@ footer .copyright p {
     }
 }
 
+/* TÉLÉPHONES TRÈS ÉTROITS (≤ 460px) */
+@media (max-width: 460px) {
 
-.imgAbout { 
-    flex: 1 1 350px
+    #header {
+        padding: 8px 12px;
+    }
+
+    #header .logo {
+        max-width: 160px;
+    }
+
+    h1 { font-size: 28px; }
+    h2 { font-size: 24px; }
+
+    #hero {
+        padding: 0 20px;
+        background-position: 55%;
+    }
+
+    #feature {
+        justify-content: space-between;
+    }
+
+    #feature .fe-box {
+        width: 155px;
+        margin: 0 0 15px 0;
+    }
+
+    #produit1 .pro {
+        width: 100%;
+    }
+
+    #banner {
+        height: 40vh;
+    }
+
+    #sm-banner .banner-box1,
+    #sm-banner .banner-box2 {
+        height: 40vh;
+        width: 100%;
+    }
 }
