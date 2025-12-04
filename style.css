@@ -1107,7 +1107,7 @@ footer .copyright p {
     }
 
     #header .logo {
-        max-width: 170px;      /* toujours lisible */
+        max-width: 190px;      /* toujours lisible */
     }
 
     h1 { font-size: 32px; }
@@ -1168,7 +1168,7 @@ footer .copyright p {
     }
 
     #header .logo {
-        max-width: 200px;
+        max-width: 190px;
     }
 
     h1 {
@@ -1204,11 +1204,7 @@ footer .copyright p {
     #sm-banner .banner-box1,
     #sm-banner .banner-box2 {
         height: 100%;
-        width: 100%;
-    }
-    #sm-banner img {
-        height: 100%;
-        width: 100%;
+        width: 90%;
     }
 
 }
