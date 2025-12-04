@@ -1198,13 +1198,13 @@ footer .copyright p {
     }
 
     #banner {
-        height: 40vh;
+        height: 50vh;
     }
 
     #sm-banner .banner-box1,
     #sm-banner .banner-box2 {
         height: 100%;
-        width: 90%;
+        width: 100%;
     }
 
 }
