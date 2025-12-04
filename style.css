@@ -1161,7 +1161,7 @@ footer .copyright p {
 }
 
 /* TÉLÉPHONES TRÈS ÉTROITS (≤ 460px) */
-@media (max-width: 460px) {
+@media (max-width: 390px) {
 
     #header {
         padding: 8px 12px;
@@ -1203,6 +1203,10 @@ footer .copyright p {
 
     #sm-banner .banner-box1,
     #sm-banner .banner-box2 {
+        height: 100%;
+        width: 100%;
+    }
+    #sm-banner img {
         height: 100%;
         width: 100%;
     }
