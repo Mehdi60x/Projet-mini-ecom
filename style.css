@@ -1127,7 +1127,7 @@ footer .copyright p {
 
     #sm-banner .banner-box1,
     #sm-banner .banner-box2 {
-        height: 800px;
+        height: 60vh;
         width: 100%;
         padding: 20px;
     }
@@ -1198,7 +1198,12 @@ footer .copyright p {
 
     #sm-banner .banner-box1,
     #sm-banner .banner-box2 {
-        height: 40vh;
+        height: 80vh;
+        width: 100%;
+    }
+     #sm-banner .banner-box1 img,
+    #sm-banner .banner-box2 img {
+        height: 80vh;
         width: 100%;
     }
 }
