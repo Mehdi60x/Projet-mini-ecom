@@ -997,14 +997,14 @@ footer .copyright p {
 
     /* BANNIÈRE SOLDES */
     #banner {
-        height: 30vh;
+        height: 40vh;
         padding: 20px;
     }
 
     /* SM-BANNER */
     #sm-banner {
         flex-direction: column;
-        gap: 50px;
+        gap: 30px;
     }
 
     #sm-banner .banner-box1,
