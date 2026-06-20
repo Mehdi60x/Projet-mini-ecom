@@ -4,14 +4,41 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@300;400;500;600;700;800;900&display=swap');
 
+:root {
+    --color-black: #0d0d0d;
+    --color-white: #ffffff;
+    --color-ice: #3fb6e0;
+    --color-ice-dark: #1f8fb8;
+    --color-ice-light: #eaf8fd;
+    --color-grey: #6b6b6b;
+    --color-grey-light: #f4f5f6;
+    --radius-sm: 6px;
+    --radius-md: 14px;
+    --radius-lg: 26px;
+    --transition: 0.35s ease;
+    --shadow-soft: 0 10px 30px rgba(13, 13, 13, 0.08);
+    --shadow-strong: 0 20px 45px rgba(13, 13, 13, 0.18);
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Neutralise le rendu natif des boutons (macOS/Windows + OS en mode sombre
+   peuvent sinon ignorer les couleurs définies en CSS) */
+button {
+    appearance: none;
+    -webkit-appearance: none;
+    font-family: inherit;
+}
+
 html {
     scroll-behavior: smooth;
+    /* Le site n'a pas de variante sombre : on évite que le navigateur
+       réassombrisse automatiquement les boutons/inputs en mode sombre OS. */
+    color-scheme: light;
 }
 
 body {
@@ -57,7 +84,8 @@ p {
     margin: 40px 0;
 }
 
-button.normal {
+button.normal,
+a.normal {
     font-size: 14px;
     font-weight: 800;
     padding: 15px 30px;
@@ -67,7 +95,15 @@ button.normal {
     cursor: pointer;
     border: none;
     outline: none;
-    transition: 0.4s ease;
+    display: inline-block;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+button.normal:hover,
+a.normal:hover {
+    background-color: var(--color-ice);
+    color: white;
 }
 
 /* ==============================
@@ -108,12 +144,20 @@ button.normal {
     align-items: center;
     justify-content: space-between;
     padding: 8px 80px;
-    background-color: white;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    background-color: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     z-index: 999;
     position: sticky;
     top: 0;
     left: 0;
+    border-bottom: 1px solid transparent;
+    transition: var(--transition);
+}
+
+#header.scrolled {
+    box-shadow: var(--shadow-strong);
+    border-bottom-color: var(--color-ice-light);
 }
 
 /* Logo dans le header */
@@ -146,7 +190,7 @@ button.normal {
 
 #navbar li a:hover,
 #navbar li a.active {
-    color: rgb(8, 7, 7);
+    color: var(--color-ice-dark);
 }
 
 #navbar li a.active::after,
@@ -154,13 +198,13 @@ button.normal {
     content: "";
     width: 30%;
     height: 2px;
-    background: black;
+    background: var(--color-ice);
     position: absolute;
     bottom: -4px;
     left: 20px;
 }
 
-/* Icônes mobile (burger + panier) */
+/* Icône mobile (burger) */
 #mobile {
     display: none;
     align-items: center;
@@ -174,6 +218,10 @@ button.normal {
 #bar {
     font-size: 25px;
     cursor: pointer;
+}
+
+#navbar li.nav-close {
+    display: none;
 }
 
 #close {
@@ -229,8 +277,9 @@ button.normal {
 }
 
 #hero button:hover {
-    background-color: black;
+    background-color: var(--color-ice);
     color: white;
+    border-color: var(--color-ice);
 }
 
 /* ==============================
@@ -261,7 +310,9 @@ button.normal {
 }
 
 #feature .fe-box:hover {
-    box-shadow: 10px 10px 54px rgba(23, 23, 24, 0.7);
+    box-shadow: var(--shadow-strong);
+    border-color: var(--color-ice);
+    transform: translateY(-4px);
 }
 
 #feature .fe-box img {
@@ -281,18 +332,17 @@ button.normal {
 
 /* ==============================
    PRODUITS (collection)
-   (attention : 2 sections avec id="produit1" dans le HTML)
 ==============================*/
 
-#produit1 {
+.produits {
     text-align: center;
 }
 
-#produit1 p {
+.produits p {
     font-weight: bolder;
 }
 
-#produit1 .pro-container {
+.produits .pro-container {
     display: flex;
     justify-content: space-between;
     padding-top: 20px;
@@ -300,7 +350,7 @@ button.normal {
     gap: 20px;
 }
 
-#produit1 .pro {
+.produits .pro {
     width: 23%;
     min-width: 250px;
     padding: 10px 12px;
@@ -313,47 +363,49 @@ button.normal {
     background-color: white;
 }
 
-#produit1 .pro:hover {
-    box-shadow: 20px 20px 30px rgba(0, 10, 20, 0.08);
+.produits .pro:hover {
+    box-shadow: var(--shadow-strong);
     background-color: black;
+    border-color: var(--color-ice);
     color: white;
+    transform: translateY(-6px);
 }
 
-#produit1 .pro img {
+.produits .pro img {
     width: 100%;
     height: auto;
     border-radius: 20px;
 }
 
-#produit1 .pro .des {
+.produits .pro .des {
     text-align: start;
     padding: 10px 0;
 }
 
-#produit1 .pro .des span {
+.produits .pro .des span {
     color: dimgray;
     font-size: 12px;
     font-weight: bolder;
 }
 
-#produit1 .pro .des h5 {
+.produits .pro .des h5 {
     padding-top: 7px;
     font-size: 14px;
 }
 
-#produit1 .pro .des i {
+.produits .pro .des i {
     font-size: 12px;
     color: goldenrod;
 }
 
-#produit1 .pro .des h4 {
+.produits .pro .des h4 {
     padding-top: 7px;
     font-size: 15px;
     font-weight: 900;
     color: dimgrey;
 }
 
-#produit1 .pro a {
+.produits .pro a {
     background-color: black;
     color: white;
     padding: 10px 10px;
@@ -369,9 +421,9 @@ button.normal {
     transition: 0.6s ease;
 }
 
-#produit1 .pro a:hover {
-    background-color: white;
-    color: black;
+.produits .pro a:hover {
+    background-color: var(--color-ice);
+    color: white;
 }
 
 /* ==============================
@@ -826,6 +878,15 @@ footer .copyright p {
     color: white;
 }
 
+#blog-story h4 {
+    color: var(--color-ice-light);
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
 #blog-story h3 {
     font-size: 28px;
     margin-bottom: 15px;
@@ -851,8 +912,46 @@ footer .copyright p {
     color: black;
 }
 
-.imgAbout { 
+/* ==============================
+   ABOUT.HTML — CHAPITRES & MISSION
+==============================*/
+
+.about-chapter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: center;
+    margin-top: 80px;
+}
+
+.about-chapter.reverse {
+    flex-direction: row-reverse;
+}
+
+.about-chapter .col-media,
+.about-chapter .col-text {
     flex: 1 1 350px;
+}
+
+.about-chapter .col-media img {
+    width: 100%;
+    border-radius: var(--radius-md);
+    display: block;
+}
+
+.about-mission {
+    margin-top: 100px;
+    text-align: center;
+}
+
+.about-mission p {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.about-mission .normal {
+    margin-top: 30px;
+    display: inline-block;
 }
 
 /* ==============================
@@ -876,7 +975,7 @@ footer .copyright p {
         background-position: center;
     }
 
-    #produit1 .pro {
+    .produits .pro {
         width: 45%;
     }
 
@@ -960,6 +1059,11 @@ footer .copyright p {
         display: flex;
     }
 
+    #navbar li.nav-close {
+        display: block;
+        padding: 0;
+    }
+
     #close {
         display: initial;
         position: absolute;
@@ -987,11 +1091,11 @@ footer .copyright p {
     }
 
     /* PRODUITS */
-    #produit1 .pro-container {
+    .produits .pro-container {
         justify-content: center;
     }
 
-    #produit1 .pro {
+    .produits .pro {
         width: 90%;
     }
 
@@ -1133,7 +1237,7 @@ footer .copyright p {
         text-align: left;
     }
 
-    #produit1 .pro {
+    .produits .pro {
         width: 100%;
         margin: 10px 0;
     }
@@ -1206,7 +1310,7 @@ footer .copyright p {
         margin: 0 0 15px 0;
     }
 
-    #produit1 .pro {
+    .produits .pro {
         width: 100%;
     }
 
@@ -1220,4 +1324,438 @@ footer .copyright p {
         width: 100%;
     }
 
+}
+
+/* ==============================
+   ANIMATIONS AU SCROLL
+==============================*/
+
+/* Par défaut (sans JS, ou avant activation), le contenu reste visible :
+   l'animation est une amélioration progressive, jamais une condition d'affichage. */
+html.js [data-reveal] {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+html.js [data-reveal].in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html.js [data-reveal] {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+/* ==============================
+   BOUTON RETOUR EN HAUT
+==============================*/
+
+#back-to-top {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--color-black);
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-strong);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: var(--transition);
+    z-index: 900;
+}
+
+#back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#back-to-top:hover {
+    background-color: var(--color-ice);
+}
+
+/* ==============================
+   FILTRES BOUTIQUE
+==============================*/
+
+.filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin: 30px 0 10px;
+}
+
+.filter-bar button {
+    border: 2px solid var(--color-black);
+    background-color: white;
+    color: var(--color-black);
+    padding: 8px 20px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.filter-bar button:hover {
+    border-color: var(--color-ice);
+    color: var(--color-ice-dark);
+}
+
+.filter-bar button.active {
+    background-color: var(--color-black);
+    color: white;
+}
+
+.pro.is-hidden {
+    display: none;
+}
+
+/* ==============================
+   BADGE CATÉGORIE / BANDEAU
+==============================*/
+
+.badge-ice {
+    display: inline-block;
+    background-color: var(--color-ice-light);
+    color: var(--color-ice-dark);
+    font-size: 12px;
+    font-weight: 800;
+    padding: 6px 14px;
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ==============================
+   FIL D'ARIANE
+==============================*/
+
+.breadcrumb {
+    padding: 18px 80px 0;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-grey);
+}
+
+.breadcrumb a {
+    color: var(--color-grey);
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    color: var(--color-ice-dark);
+}
+
+.breadcrumb span {
+    color: var(--color-black);
+}
+
+/* ==============================
+   FICHE PRODUIT (product-detail.html)
+==============================*/
+
+#product-detail {
+    padding: 30px 80px 10px;
+}
+
+.product-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+.product-media {
+    flex: 1 1 380px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background-color: var(--color-grey-light);
+}
+
+.product-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.product-info {
+    flex: 1 1 380px;
+}
+
+.product-info span.brand {
+    color: var(--color-grey);
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.product-info h1 {
+    font-size: 34px;
+    line-height: 1.25;
+    margin: 10px 0;
+}
+
+.product-info .tagline {
+    color: var(--color-ice-dark);
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.product-info .stars i {
+    color: goldenrod;
+    font-size: 14px;
+}
+
+.product-info .price {
+    font-size: 28px;
+    font-weight: 900;
+    margin: 18px 0;
+}
+
+.product-info .description {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.product-info ul.details {
+    list-style: none;
+    margin: 0 0 30px 0;
+    padding: 0;
+}
+
+.product-info ul.details li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.product-info ul.details li i {
+    color: var(--color-ice);
+    margin-right: 10px;
+}
+
+.size-selector {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.size-selector button {
+    width: 46px;
+    height: 46px;
+    border: 2px solid var(--color-black);
+    background-color: white;
+    border-radius: var(--radius-sm);
+    font-weight: 800;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.size-selector button:hover,
+.size-selector button.selected {
+    background-color: var(--color-black);
+    color: white;
+}
+
+.product-cta {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.product-cta a.primary {
+    background-color: var(--color-black);
+    color: white;
+    padding: 16px 32px;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    font-weight: 800;
+    transition: var(--transition);
+}
+
+.product-cta a.primary:hover {
+    background-color: var(--color-ice);
+}
+
+.product-cta a.secondary {
+    border: 2px solid var(--color-black);
+    color: var(--color-black);
+    padding: 16px 32px;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    font-weight: 800;
+    transition: var(--transition);
+}
+
+.product-cta a.secondary:hover {
+    border-color: var(--color-ice);
+    color: var(--color-ice-dark);
+}
+
+.related-title {
+    text-align: center;
+    margin: 80px 0 10px;
+}
+
+.not-found {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.not-found a {
+    color: var(--color-ice-dark);
+    font-weight: 700;
+}
+
+/* ==============================
+   FORMULAIRES MODERNES (contact / newsletter)
+==============================*/
+
+.form-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+.form-col {
+    flex: 1 1 320px;
+    min-width: 260px;
+}
+
+.contact-info p strong {
+    color: var(--color-black);
+}
+
+.modern-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-field label {
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    color: var(--color-grey);
+}
+
+.form-field input,
+.form-field textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: var(--radius-sm);
+    border: 2px solid #e2e2e2;
+    font-family: inherit;
+    font-size: 15px;
+    resize: vertical;
+    transition: var(--transition);
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+    outline: none;
+    border-color: var(--color-ice);
+    box-shadow: 0 0 0 4px var(--color-ice-light);
+}
+
+.form-success {
+    display: none;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--color-ice-light);
+    color: var(--color-ice-dark);
+    border-radius: var(--radius-sm);
+    padding: 14px 18px;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+.form-success.visible {
+    display: flex;
+}
+
+/* ==============================
+   CRÉDIT DÉVELOPPEUR (footer)
+==============================*/
+
+.dev-credit {
+    width: 100%;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #e6e6e6;
+    text-align: center;
+}
+
+.dev-credit p {
+    font-size: 13px;
+    color: var(--color-grey);
+    font-weight: 600;
+    margin: 0;
+}
+
+.dev-credit a {
+    color: var(--color-ice-dark);
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.dev-credit a:hover {
+    text-decoration: underline;
+}
+
+/* RESPONSIVE — ajustements fiche produit / formulaires / fil d'ariane */
+@media (max-width: 1024px) {
+    .breadcrumb {
+        padding: 16px 40px 0;
+    }
+
+    #product-detail {
+        padding: 20px 40px 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .breadcrumb {
+        padding: 14px 20px 0;
+    }
+
+    #product-detail {
+        padding: 20px 20px 10px;
+    }
+
+    .product-layout {
+        gap: 30px;
+    }
+
+    #back-to-top {
+        right: 16px;
+        bottom: 16px;
+    }
 }

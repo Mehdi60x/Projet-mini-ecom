@@ -4,10 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Le journal Horizons Blanc : récits du Grand Nord, savoir-faire textile et coulisses de la marque.">
     <title>Blog | Horizons Blanc</title>
+    <link rel="icon" type="image/png" href="Asset/image/LogoHb1.png">
 
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
@@ -19,7 +22,7 @@
 
     <!-- NAVIGATION -->
     <section id="header">
-        <a href="index.html"><img src="/Asset/image/LogoHb1.png" class="logo" alt=""></a>
+        <a href="index.html"><img src="Asset/image/LogoHb1.png" class="logo" alt="Horizons Blanc"></a>
         <div>
             <ul id="navbar">
                 <li><a href="index.html">Accueil</a></li>
@@ -27,14 +30,12 @@
                 <li><a class="active" href="blog.html">Blog</a></li>
                 <li><a href="about.html">À propos</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li id="lg-bag"><a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
-                <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
+                <li class="nav-close"><a href="#" id="close"><i class="fa-solid fa-xmark"></i></a></li>
             </ul>
         </div>
 
         <div id="mobile">
-            <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a>
-            <i id="bar" class="fas fa-outdent"></i>
+            <i id="bar" class="fa-solid fa-outdent"></i>
         </div>
     </section>
 
@@ -52,7 +53,7 @@
         <h2 class="blog-title">Nos articles récents</h2>
 
         <!-- GRID ARTICLES -->
-        <div class="blog-grid">
+        <div class="blog-grid" data-reveal>
 
             <!-- ARTICLE 1 -->
             <article class="blog-card">
@@ -60,7 +61,7 @@
                 <div class="blog-content">
                     <h3>Aux portes du Grand Nord</h3>
                     <p>Comment les paysages glacés ont inspiré notre première collection.</p>
-                    <a href="contact.html">Lire l’article →</a>
+                    <a href="about.html">Lire l'article →</a>
                 </div>
             </article>
 
@@ -70,7 +71,7 @@
                 <div class="blog-content">
                     <h3>Le luxe silencieux : notre vision</h3>
                     <p>Pourquoi nos matériaux premium et nos designs épurés sont pensés pour durer.</p>
-                    <a href="contact.html">Lire l’article →</a>
+                    <a href="about.html">Lire l'article →</a>
                 </div>
             </article>
 
@@ -81,47 +82,39 @@
                 <div class="blog-content">
                     <h3>Protéger du froid extrême</h3>
                     <p>Ce qui rend nos doudounes uniques dans les environnements hostiles.</p>
-                    <a href="contact.html">Lire l’article →</a>
+                    <a href="about.html">Lire l'article →</a>
                 </div>
             </article>
 
         </div>
 
         <!-- HISTOIRE DE MARQUE -->
-        <section id="blog-story" class="section-p1">
+        <section id="blog-story" class="section-p1" data-reveal>
             <div class="story-container">
-                <h2 class="blog-title">Notre histoire</h2>
-
-                <div class="banner-box1">
-                    <a href="contact.html">DÉCOUVRIR</a>
-                </div>
-
-        </section>
-
-        <div>
-            <h3>Une marque née dans le froid</h3>
-            <p>
-                Horizons Blanc est née d’un constat simple : créer des vêtements capables de résister
-                aux environnements les plus extrêmes...
-            </p>
-            <a href="product.html" class="normal">Découvrir la marque</a>
-        </div>
-
-        </div>
+                <h4>Notre histoire</h4>
+                <h3>Une marque née dans le froid</h3>
+                <p>
+                    Horizons Blanc est née d'un constat simple : créer des vêtements capables de résister
+                    aux environnements les plus extrêmes, sans jamais sacrifier l'élégance.
+                </p>
+                <a href="about.html">Découvrir notre histoire</a>
+            </div>
         </section>
 
     </main>
 
     <!-- Newsletter -->
-    <section id="newsletter" class="section-p1 section-m1">
+    <section id="newsletter" class="section-p1 section-m1" data-reveal>
         <div class="newstext">
             <h4>Inscrivez-vous à notre Newsletter</h4>
             <p>Rejoignez notre communauté pour bénéficier de 10 % de réduction sur votre première commande</p>
+            <div class="form-success" id="newsletter-success"><i class="fa-solid fa-circle-check"></i> Merci ! Vous
+                êtes inscrit(e).</div>
         </div>
-        <div class="form">
-            <input type="text" placeholder="Saisir votre email">
-            <button class="normal">Envoyer</button>
-        </div>
+        <form class="form newsletter-form">
+            <input type="email" placeholder="Saisir votre email" required>
+            <button class="normal" type="submit">Envoyer</button>
+        </form>
     </section>
 
     <!-- section Footer -->
@@ -140,7 +133,7 @@
                     <i class="fa-solid fa-x"></i>
                     <i class="fa-brands fa-youtube"></i>
                     <div>
-                        <img class="logo" src="Asset/image/LogoHb1.png" alt="">
+                        <img class="logo" src="Asset/image/LogoHb1.png" alt="Horizons Blanc">
                     </div>
                 </div>
             </div>
@@ -157,30 +150,35 @@
 
         <div class="col">
             <h4>À propos</h4>
-            <a href="#">Boutique</a>
-            <a href="#">Suivi de commande</a>
-            <a href="#">Notre histoire</a>
-            <a href="#">Faq</a>
-            <a href="#">Contactez-nous</a>
+            <a href="product.html">Boutique</a>
+            <a href="about.html">Notre histoire</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contactez-nous</a>
         </div>
 
         <div class="colinstall">
             <h4>Install App</h4>
             <p>From App Store or Google Play</p>
             <div class="row">
-                <img src="Asset/image/Apple-Google-Pay-Logos-Translucent.png" alt="">
-                <!-- <img src="Asset/image/AmericanExpress.png" alt=""> -->
+                <img src="Asset/image/Apple-Google-Pay-Logos-Translucent.png" alt="Apple Pay et Google Pay">
             </div>
             <p>Secured Payment Gateways</p>
-            <img src="Asset/image/paiement_NM-768x243.png" alt="">
+            <img src="Asset/image/paiement_NM-768x243.png" alt="Moyens de paiement sécurisés">
         </div>
 
         <div class="copyright">
             <p>© 2025, Horizons Blanc - Tous droits réservés</p>
         </div>
+
+        <div class="dev-credit">
+            <p>Site vitrine fictif réalisé à but de démonstration — projet portfolio de <strong>Mehdi
+                    Hattaoui</strong>, actuellement à la recherche d'une alternance en développement web.
+                <a href="https://github.com/Mehdi60x/Projet-mini-ecom" target="_blank" rel="noopener">Voir le code
+                    source sur GitHub</a>
+            </p>
+        </div>
     </footer>
 
-    <script src="https://kit.fontawesome.com/3fe3cc7820.js" crossorigin="anonymous"></script>
     <script src="index.js"></script>
 
 </body>

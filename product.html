@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Toute la collection Horizons Blanc : doudounes, manteaux, chaussures et accessoires pensés pour le froid extrême.">
     <title>Boutique | Horizons Blanc</title>
+    <link rel="icon" type="image/png" href="Asset/image/LogoHb1.png">
 
-    <!-- CSS principal -->
     <link rel="stylesheet" href="style.css">
-
-    <!-- Icônes FontAwesome comme sur la home -->
-    <link rel="stylesheet" href="https://pro.fontawesome.com/release/v5.10.0/css/all.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
@@ -22,7 +22,7 @@
 
     <!-- HEADER / NAVBAR identique au site -->
     <section id="header">
-        <a href="index.html"><img src="/Asset/image/LogoHb1.png" class="logo" alt="Logo Horizons Blanc"></a>
+        <a href="index.html"><img src="Asset/image/LogoHb1.png" class="logo" alt="Horizons Blanc"></a>
         <div>
             <ul id="navbar">
                 <li><a href="index.html">Accueil</a></li>
@@ -30,15 +30,13 @@
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="about.html">À propos</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li id="lg-bag"><a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
-                <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
+                <li class="nav-close"><a href="#" id="close"><i class="fa-solid fa-xmark"></i></a></li>
             </ul>
         </div>
 
         <!-- Menu mobile -->
         <div id="mobile">
-            <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a>
-            <i id="bar" class="fas fa-outdent"></i>
+            <i id="bar" class="fa-solid fa-outdent"></i>
         </div>
     </section>
 
@@ -53,14 +51,21 @@
         </section>
 
         <!-- SECTION PRODUITS -->
-        <section id="produit1" class="section-p1">
+        <section class="produits section-p1" data-reveal>
             <h2>Tous nos produits</h2>
             <p>Des pièces conçues pour la performance, le confort et le style.</p>
 
+            <div class="filter-bar">
+                <button type="button" class="active" data-filter="tout">Tout</button>
+                <button type="button" data-filter="doudounes">Doudounes</button>
+                <button type="button" data-filter="manteaux">Manteaux</button>
+                <button type="button" data-filter="chaussures">Chaussures</button>
+                <button type="button" data-filter="accessoires">Accessoires</button>
+            </div>
+
             <div class="pro-container">
 
-                <!-- Produit 1 -->
-                <div class="pro">
+                <div class="pro" data-category="doudounes">
                     <img src="Asset/image/Doudoune1.png" alt="Doudoune Alaska Harveyton">
                     <div class="des">
                         <span>Horizons Blanc</span>
@@ -70,12 +75,11 @@
                                 class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
                         <h4>499,99 €</h4>
-                        <a href="contact.html">Découvrir</a>
+                        <a href="product-detail.html?p=doudoune-alaska-harveyton">Découvrir</a>
                     </div>
                 </div>
 
-                <!-- Produit 2 -->
-                <div class="pro">
+                <div class="pro" data-category="doudounes">
                     <img src="Asset/image/Produit2.png" alt="Doudoune sans manche Harveyton">
                     <div class="des">
                         <span>Horizons Blanc</span>
@@ -85,12 +89,11 @@
                                 class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
                         <h4>299,99 €</h4>
-                        <a href="contact.html">Découvrir</a>
+                        <a href="product-detail.html?p=doudoune-harveyton-sans-manche">Découvrir</a>
                     </div>
                 </div>
 
-                <!-- Produit 3 -->
-                <div class="pro">
+                <div class="pro" data-category="doudounes">
                     <img src="Asset/image/Pproduits3.png" alt="Doudoune sans manche Lawrence">
                     <div class="des">
                         <span>Horizons Blanc</span>
@@ -100,12 +103,11 @@
                                 class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
                         <h4>299,99 €</h4>
-                        <a href="contact.html">Découvrir</a>
+                        <a href="product-detail.html?p=doudoune-lawrence">Découvrir</a>
                     </div>
                 </div>
 
-                <!-- Produit 4 -->
-                <div class="pro">
+                <div class="pro" data-category="doudounes">
                     <img src="Asset/image/doudoune3.png" alt="Doudoune MontBlanc">
                     <div class="des">
                         <span>Horizons Blanc</span>
@@ -115,12 +117,11 @@
                                 class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
                         <h4>599,99 €</h4>
-                        <a href="contact.html">Découvrir</a>
+                        <a href="product-detail.html?p=doudoune-montblanc">Découvrir</a>
                     </div>
                 </div>
 
-                <!-- Produit 5 -->
-                <div class="pro">
+                <div class="pro" data-category="doudounes">
                     <img src="Asset/image/Doudoune5.png" alt="Doudoune sans manche Lodge">
                     <div class="des">
                         <span>Horizons Blanc</span>
@@ -130,12 +131,11 @@
                                 class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
                         <h4>259,99 €</h4>
-                        <a href="contact.html">Découvrir</a>
+                        <a href="product-detail.html?p=doudoune-lodge">Découvrir</a>
                     </div>
                 </div>
 
-                <!-- Produit 6 -->
-                <div class="pro">
+                <div class="pro" data-category="doudounes">
                     <img src="Asset/image/Doudoune6.png" alt="Doudoune sans manche Fjord">
                     <div class="des">
                         <span>Horizons Blanc</span>
@@ -145,13 +145,12 @@
                                 class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
                         <h4>279,99 €</h4>
-                        <a href="contact.html">Découvrir</a>
+                        <a href="product-detail.html?p=doudoune-fjord">Découvrir</a>
                     </div>
                 </div>
 
-                <!-- Produit 7 -->
-                <div class="pro">
-                    <img src="Asset/image/Doudoune7.png" alt="Manteaux Shelburne">
+                <div class="pro" data-category="manteaux">
+                    <img src="Asset/image/Doudoune7.png" alt="Manteau Shelburne">
                     <div class="des">
                         <span>Horizons Blanc</span>
                         <h5>Manteaux Shelburne</h5>
@@ -160,12 +159,11 @@
                                 class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
                         <h4>379,99 €</h4>
-                        <a href="contact.html">Découvrir</a>
+                        <a href="product-detail.html?p=manteau-shelburne">Découvrir</a>
                     </div>
                 </div>
 
-                <!-- Produit 8 -->
-                <div class="pro">
+                <div class="pro" data-category="accessoires">
                     <img src="Asset/image/Doudoune8.png" alt="Gilet Polaire GreenPark">
                     <div class="des">
                         <span>Horizons Blanc</span>
@@ -175,12 +173,11 @@
                                 class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
                         <h4>149,99 €</h4>
-                        <a href="contact.html">Découvrir</a>
+                        <a href="product-detail.html?p=gilet-greenpark">Découvrir</a>
                     </div>
                 </div>
 
-                <!-- Tu peux continuer ici avec les produits Polaris, bottes, bonnets, etc. -->
-                <div class="pro">
+                <div class="pro" data-category="accessoires">
                     <img src="Asset/image/Vesterose.png" alt="Gilet température Snow">
                     <div class="des">
                         <span>Horizons Blanc</span>
@@ -190,11 +187,11 @@
                                 class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
                         <h4>149,99 €</h4>
-                        <a href="contact.html">Découvrir</a>
+                        <a href="product-detail.html?p=gilet-snow">Découvrir</a>
                     </div>
                 </div>
 
-                <div class="pro">
+                <div class="pro" data-category="chaussures">
                     <img src="Asset/image/Bottes1.png" alt="Botte Midleton Arrow">
                     <div class="des">
                         <span>Horizons Blanc</span>
@@ -204,11 +201,11 @@
                                 class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
                         <h4>199,99 €</h4>
-                        <a href="contact.html">Découvrir</a>
+                        <a href="product-detail.html?p=botte-midleton-arrow">Découvrir</a>
                     </div>
                 </div>
 
-                <div class="pro">
+                <div class="pro" data-category="accessoires">
                     <img src="Asset/image/Sacoche.png" alt="Sacoche Polaris">
                     <div class="des">
                         <span>Horizons Blanc</span>
@@ -218,11 +215,11 @@
                                 class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
                         <h4>89,99 €</h4>
-                        <a href="contact.html">Découvrir</a>
+                        <a href="product-detail.html?p=sacoche-polaris">Découvrir</a>
                     </div>
                 </div>
 
-                <div class="pro">
+                <div class="pro" data-category="accessoires">
                     <img src="Asset/image/BonnetFluo.png" alt="Bonnet Polaris">
                     <div class="des">
                         <span>Horizons Blanc</span>
@@ -232,7 +229,7 @@
                                 class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
                         <h4>69,99 €</h4>
-                        <a href="contact.html">Découvrir</a>
+                        <a href="product-detail.html?p=bonnet-polaris">Découvrir</a>
                     </div>
                 </div>
 
@@ -242,15 +239,17 @@
     </main>
 
     <!-- section Newsletter -->
-    <section id="newsletter" class="section-p1 section-m1">
+    <section id="newsletter" class="section-p1 section-m1" data-reveal>
         <div class="newstext">
             <h4>Inscrivez-vous à notre Newsletter</h4>
             <p>Rejoignez notre communauté pour bénéficier de 10 % de réduction sur votre première commande</p>
+            <div class="form-success" id="newsletter-success"><i class="fa-solid fa-circle-check"></i> Merci ! Vous
+                êtes inscrit(e).</div>
         </div>
-        <div class="form">
-            <input type="text" placeholder="Saisir votre email">
-            <button class="normal">Envoyer</button>
-        </div>
+        <form class="form newsletter-form">
+            <input type="email" placeholder="Saisir votre email" required>
+            <button class="normal" type="submit">Envoyer</button>
+        </form>
     </section>
 
     <!-- section Footer -->
@@ -269,7 +268,7 @@
                     <i class="fa-solid fa-x"></i>
                     <i class="fa-brands fa-youtube"></i>
                     <div>
-                        <img class="logo" src="Asset/image/LogoHb1.png" alt="">
+                        <img class="logo" src="Asset/image/LogoHb1.png" alt="Horizons Blanc">
                     </div>
                 </div>
             </div>
@@ -286,30 +285,35 @@
 
         <div class="col">
             <h4>À propos</h4>
-            <a href="#">Boutique</a>
-            <a href="#">Suivi de commande</a>
-            <a href="#">Notre histoire</a>
-            <a href="#">Faq</a>
-            <a href="#">Contactez-nous</a>
+            <a href="product.html">Boutique</a>
+            <a href="about.html">Notre histoire</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contactez-nous</a>
         </div>
 
         <div class="colinstall">
             <h4>Install App</h4>
             <p>From App Store or Google Play</p>
             <div class="row">
-                <img src="Asset/image/Apple-Google-Pay-Logos-Translucent.png" alt="">
-                <!-- <img src="Asset/image/AmericanExpress.png" alt=""> -->
+                <img src="Asset/image/Apple-Google-Pay-Logos-Translucent.png" alt="Apple Pay et Google Pay">
             </div>
             <p>Secured Payment Gateways</p>
-            <img src="Asset/image/paiement_NM-768x243.png" alt="">
+            <img src="Asset/image/paiement_NM-768x243.png" alt="Moyens de paiement sécurisés">
         </div>
 
         <div class="copyright">
             <p>© 2025, Horizons Blanc - Tous droits réservés</p>
         </div>
+
+        <div class="dev-credit">
+            <p>Site vitrine fictif réalisé à but de démonstration — projet portfolio de <strong>Mehdi
+                    Hattaoui</strong>, actuellement à la recherche d'une alternance en développement web.
+                <a href="https://github.com/Mehdi60x/Projet-mini-ecom" target="_blank" rel="noopener">Voir le code
+                    source sur GitHub</a>
+            </p>
+        </div>
     </footer>
-    <!-- FontAwesome + JS du menu -->
-    <script src="https://kit.fontawesome.com/3fe3cc7820.js" crossorigin="anonymous"></script>
+
     <script src="index.js"></script>
 </body>
 
